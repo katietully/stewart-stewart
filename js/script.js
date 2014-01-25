@@ -20,34 +20,34 @@ console.log("that's all folks");
 
 
 // F R E E W A L L
-var wall = new freewall("#freewall");
- function initFreewall() {
-         
 
-        wall.reset({
-            selector: '.brick',
-            animate: true,
-            cellW: cellWidth(),
-			cellH: 'auto',
-            onResize: function() {
-                this.fitWidth();
-            }
-        });
+function initFreewall() {
+	var wall = new freewall("#freewall");         
+
+	wall.reset({
+		selector: '.brick',
+		animate: true,
+		cellW: cellWidth(),
+		cellH: 'auto',
+		onResize: function() {
+			this.fitWidth();
+		}
+	});
  
     //     wall.fitWidth();
     // 
- var images = wall.container.find('.brick');
-			var length = images.length;
-			images.css({visibility: 'hidden'});
-			images.find('img').load(function() {
-				-- length;
-				if (!length) {
-					setTimeout(function() {
-						images.css({visibility: 'visible'});
-						wall.fitWidth();
-					}, 1);
-				}
-			});
+	var images = wall.container.find('.brick');
+	var length = images.length;
+	images.css({visibility: 'hidden'});
+	images.find('img').load(function() {
+		-- length;
+		if (!length) {
+			setTimeout(function() {
+				images.css({visibility: 'visible'});
+				wall.fitWidth();
+			}, 1);
+		}
+	});
 }
 initFreewall();
 
