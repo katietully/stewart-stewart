@@ -68,9 +68,9 @@ var gridpak = {
                     min_width: 780,
                     col_num: 12,
                     gutter_type: '%',
-                    gutter_width: 2,
+                    gutter_width: 1.25,
                     padding_type: '%',
-                    padding_width: 2.5,
+                    padding_width: 2,
                     upper: false
                 },
                 
@@ -189,18 +189,18 @@ var gridpak = {
      /**
       * Toggles the grids visibility with a keypress
       */
-     /*
+     
 
-     toggleGrid: function() {
-        var that = this;
+     // toggleGrid: function() {
+     //    var that = this;
 
-        $(document).keyup(function(e) {
-            if (e.keyCode == 71) {
-                that.$container.toggle();
-            }
-        });
-     },
-    */
+     //    $(document).keyup(function(e) {
+     //        if (e.keyCode == 71) {
+     //            that.$container.toggle();
+     //        }
+     //    });
+     // },
+    
      
 
  }

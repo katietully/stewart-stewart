@@ -5,20 +5,20 @@
 	<meta name="description" content="Your description goes here">
 	<meta name="keywords" content="one, two, three">
 
-	<title>sample_project_folder</title>
+	<title>Contact • Stewart &amp; Stewart • Printer / Publisher / Dealer of Fine Prints Since 1980</title>
 
-	<!-- TYPEKIT -->
+	<!-- T Y P E K I T -->
 	<script type="text/javascript" src="//use.typekit.net/lra2opt.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<!-- CSS STYLESHEETS -->
-	<link rel="stylesheet" href="css/reset.css">
+	<!-- C S S  S T Y L E S H E E T S -->
 	<link rel="stylesheet" href="css/chosen.min.css">
+	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/styles.css">
 
 
-	<!-- HTML5 shiv for IE -->
-	<script src="dist/html5shiv.js"></script>
+	<!-- M O D E R N I Z R -->
+	<script src="js/modernizr-custom.min.js"></script>
 
 </head>
 <body>
@@ -68,71 +68,94 @@
 		</div>
 	</header>
 	<div class="page">
-		<div class="form-intro">
-			If you would like more information about Stewart &amp; Stewart editions, email us at info@StewartStewart.com or fill out this request form and click the submit button below.
-		</div>
-		<form class="form-container" id="email-form">
-			<input type="hidden" name="REDIRECT_URI" value="some_hidden_value" />
-			<filedset class="personal-info">
-				<legend>Your Contact Information</legend>
-				<label class="form-field" for="firstname">First Name</label>
-				<input 
-					placeholder="First" 
-					type="text" 
-					name="firstname" 
-					id="firstname" 
-					class="firstname"
-					required />
-				<label for="lastname">Last Name</label>
-				<input 
-					placeholder="Last" 
-					type="text" 
-					name="lastname" 
-					id="lastname" 
-					class="lastname" />
-			</fieldset>
-			<filedset 
-				action="" 
-				method="POST"
-				class="artist-form">
-				<legend>Areas of Interest</legend>
-				<label for="artists-of-interest">Artist(s)</label>
-				<select multiple id="artists-of-interest">
-					<option value="Artist1">Artist One Name</option>
-					<option value="Artist2">Artist 2</option>
-					<option value="Artist3">Artist 3</option>
-				</select>
-				<label for="works-of-interest">Work(s)</label>
-				<select multiple id="works-of-interest">
-					<option value="Work1">Works 1</option>
-					<option value="Work2">Works 2</option>
-					<option value="Work3">Works 3</option>
-				</select>
-			</fieldset>
-			<!-- <input type="submit" value="Submit" /> -->
-			<div class='submit-button'>Submit</div>
-			<div style="height: 200px; background-color: pink;"></div>
-			
-		</form>
-	<!--
-		<header class="row">
-		    <div class="header col">Header</div>
-		</header>
 		<div class="row">
-		    <div class="navigation col">Navigation</div>
-		    <div class="main_content col">Main content</div>
-		    <div class="related_content col">Related content</div>
-		</div>
-		<div class="row">
-		    <div class="media_block col">Media block 1</div>
-		    <div class="media_block col">Media block 2</div>
-		    <div class="media_block col">Media block 3</div>
-		</div>
-		<footer class="row">
-		    <div class="footer col">Footer</div>
-		</footer>
-	-->
-    </div>
+			<div class="form-intro col">
+				<div class="art-bbar bbar"></div>
+				<div class="introtext">
+					<div class="introtext-sect">
+						<h2>General Contact Form</h2>
+						<p>
+							If you would like more information about Stewart &amp; Stewart editions, email us at info@StewartStewart.com or fill out our contact form and click the submit button below.
+						</p>
+					</div>
+					<div class="introtext-sect">
+						<h2>Want to place an order?</h2>
+						<p>
+							If you would like to place an order, please use our <a href="order.html">Order Inquiry Form</a> instead.
+						</p>
+					</div>
+				</div>
+			</div>  <!-- CLOSE FORM INTRO -->
+			<form class="form-container col" id="email-form">
+				<div class="art-bbar bbar"></div>
+				<div class="fieldset-cont">
+					<filedset
+						action="" 
+						method="POST"
+						class="contact-form">
+						<legend>Your Contact Information</legend>
+						<label class="form-field" for="firstname">First Name</label>
+						<input 
+							placeholder="First" 
+							type="text" 
+							name="firstname" 
+							id="firstname" 
+							class="firstname"
+							required />
+						<label for="lastname">Last Name</label>
+						<input 
+							placeholder="Last" 
+							type="text" 
+							name="lastname" 
+							id="lastname" 
+							class="lastname" />
+						<label for="email">Email</label>
+						<input 
+							placeholder="Email" 
+							type="text" 
+							name="email" 
+							id="email" 
+							class="email" />
+
+						
+						<legend>Areas of Interest</legend>
+						<label for="artists-of-interest">Artist(s)</label>
+						<select multiple id="artists-of-interest">
+							<option value="Artist1">Artist One Name</option>
+							<option value="Artist2">Artist 2</option>
+							<option value="Artist3">Artist 3</option>
+						</select>
+						<label for="works-of-interest">Work(s)</label>
+						<select multiple id="works-of-interest">
+							<option value="Work1">Works 1</option>
+							<option value="Work2">Works 2</option>
+							<option value="Work3">Works 3</option>
+						</select>
+
+						<legend>Additional Comments</legend>
+						<textarea
+							type="text" 
+							name="comments" 
+							id="comments" 
+							class="comments">
+						</textarea>
+						<input 
+							type="checkbox" 
+							name="subscribe" 
+							value="subscribe"
+							id="subscribe"
+							class="subscribe" />
+							<div class="subscribe-text">
+								I would like to receive email updates from Stewart &amp; Stewart about new prints and upcoming events
+							</div>
+
+					</fieldset>
+					<div class='submit-button'>Submit</div>
+				</div>		
+			</form>
+
+		</div>  <!-- CLOSE ROW -->
+    </div>  <!-- CLOSE PAGE -->
     <footer>
 			<div class="more-info">Visuals and complete sales information are available on request</div>
 			<div class="break"> </div>
@@ -167,7 +190,7 @@
 
 	
 	<!-- JAVASCRIPT -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/gridpak.demo.js"></script>
 	<script src="js/freewall.js"></script>
 	<script src="js/chosen.jquery.js"></script>

@@ -4,20 +4,6 @@
 
 console.log("that's all folks");
 
-// // M A S O N R Y
-// var container = $('#container');
-// var gridWidth = $('#container').width();
-// // initialize
-// container.masonry({
-//   columnWidth: '.grid-sizer',
-//   itemSelector: '.item',
-//   // gutter: function (gridWidth) {
-//   //       return gridWidth / 50;
-//   //   };
-//   gutter: 18
-// });
-
-
 
 // F R E E W A L L
 
@@ -27,7 +13,7 @@ function initFreewall() {
 	wall.reset({
 		selector: '.brick',
 		animate: true,
-		cellW: cellWidth(),
+		cellW: 250,
 		cellH: 'auto',
 		onResize: function() {
 			this.fitWidth();
@@ -83,14 +69,14 @@ initFreewall();
 
 
 
-function cellWidth() {
-	var myWindow = $(window)
-	if 	(myWindow.width()<800) {
-		return 150;
-	} else {
-		return 250;
-	}
-}
+// function cellWidth() {
+// 	var myWindow = $(window)
+// 	if 	(myWindow.width()<800) {
+// 		return 150;
+// 	} else {
+// 		return 250;
+// 	}
+// }
 
 // $(function() {
 // 	app.setup({
@@ -112,36 +98,31 @@ function cellWidth() {
    // });
 
 
-// // W A T E R F A L L
-// function initWaterfall() {
-// $(function(){
-// 	$(".container").waterfall();
-// });
-// }
-// initWaterfall();
-
-
 
 // H A R V E S T  C H O S E N
 function initChosen() {
+	$("#state").chosen({
+		search_contains: true,
+		width: "100%",
+		no_results_text: "We couldn't find a state called"
+	});
 	$("#artists-of-interest").chosen({
 		search_contains: true,
 		width: "100%",
 		placeholder_text_multiple: "Select Artist(s)",
-		no_results_text: "We couldn't an artist named"
+		no_results_text: "We couldn't find an artist named"
 	});
 	$("#works-of-interest").chosen({
 		search_contains: true,
 		width: "100%",
-		placeholder_text_multiple: "Select Artist(s)",
-		no_results_text: "We couldn't an artist named"
-	});
-	$('.form-field').chosen({
-		width: "100%",
+		placeholder_text_multiple: "Select Work(s)",
+		no_results_text: "We couldn't find an artist named"
 	});
 }
 initChosen();
 
+
+// G E N E R A L  F O R M S
 function submitForm() {
 	var submit = $( '.submit-button' );
 	if ( submit.length == 0 ) return false;
@@ -157,6 +138,11 @@ function submitForm() {
 	);
 }	
 submitForm();
+
+
+
+
+
 
 })();
 
