@@ -38,69 +38,13 @@ function initFreewall() {
 initFreewall();
 
 
-// var downsize = true;
-// var resizeTimeout;
-
-// $(window).resize(function(){
-// 	clearTimeout( resizeTimeout );
-// 	resizeTimeout = setTimeout( function() {
-// 		var newwidth = $(window).width();
-// 		if ((newwidth<800 && downsize) || 
-// 			(newwidth>=800 && !downsize)) {
-// 			    //location.reload();
-// 			wall.reset({
-// 	            selector: '.brick',
-// 	            animate: true,
-// 	            cellW: cellWidth(),
-// 				cellH: 'auto',
-// 	            onResize: function() {
-// 	                this.fitWidth();
-// 	            }
-// 	        });
-// 	        wall.refresh();
-// 	        console.log( cellWidth() );
-// 	        console.log( '###HERE' );
-// 			    downsize = !downsize;
-// 		}
-// 	}, 500 );
-
-
-// });
-
-
-
-// function cellWidth() {
-// 	var myWindow = $(window)
-// 	if 	(myWindow.width()<800) {
-// 		return 150;
-// 	} else {
-// 		return 250;
-// 	}
-// }
-
-// $(function() {
-// 	app.setup({
-// 		share: 1,
-// 		color: 1,
-// 		logo: 1,
-// 		layout: 1,
-// 		events: 1,
-// 		methods: 1,
-// 		options: 1,
-// 		preload: 1
-// 	});
-// });
-
-//$(function() {
-  //    var wall = new freewall("#freewall");
-      
-  //    wall.fitWidth();
-   // });
-
-
-
 // H A R V E S T  C H O S E N
 function initChosen() {
+	$("#artist-jump").chosen({
+		search_contains: true,
+		width: "100%",
+		no_results_text: "We couldn't find an artist named"
+	});
 	$("#state").chosen({
 		search_contains: true,
 		width: "100%",
@@ -123,22 +67,84 @@ initChosen();
 
 
 // G E N E R A L  F O R M S
-function submitForm() {
-	var submit = $( '.submit-button' );
-	if ( submit.length == 0 ) return false;
+// function submitForm() {
+// 	var submit = $( '.submit-button' );
+// 	if ( submit.length == 0 ) return false;
 
-	submit.click(
-		function( event ) {
-			event.preventDefault();
+// 	submit.click(
+// 		function( event ) {
+// 			event.preventDefault();
 
-			var form = $( '#email-form' );
-			alert('about to submit, yo');
-			form.submit();
-		}
-	);
-}	
-submitForm();
+// 			var form = $( '#email-form' );
+// 			alert('about to submit, yo');
+// 			form.submit();
+// 		}
+// 	);
+// }	
 
+
+
+// P A R S L E Y  V A L I D A T I O N  +  F O R M  S U B M I T
+function submitParsley() {
+	var form = $( '#email-form' );
+	var confirmMsg = $( '#submit-confirm' );
+	var errorMsg = $( '#submit-error' );
+	var formCont = $( '#email-form' )
+
+	confirmMsg.addClass( 'disp-none' );
+	errorMsg.addClass( 'disp-none' );
+	
+	if ( form.length == 0 ) return;
+	// 	alert('1')
+	
+	$( '#submit' ).click( function( e ) {
+		var emailFrom = $( '#email_from' ).val()
+		, emailSubj = $( '#email_subject' ).val()
+		, emailTo = $( '#email_to' ).val()
+		, emailText = "First Name: " + $( '#firstname' ).val() + "\n" +
+			"Last Name: " + $( '#lastname' ).val() + "\n" +
+			"Email: " + $( '#email_from' ).val() + "\n" +
+			"Phone: " + $( '#phone' ).val() + "\n" +
+			"Address Line 1: " + $( '#address1' ).val() + "\n" +
+			"Address Line 2: " + $( '#address2' ).val() + "\n" +
+			"City: " + $( '#city' ).val() + "\n" +
+			"State: " + $( '#state' ).val() + "\n" +
+			"Zip: " + $( '#zip' ).val() + "\n" +
+			"Artist(s) of Interest: " + $( '#artists-of-interest' ).val() + "\n" +
+			"Work(s) of Interest: " + $( '#works-of-interest' ).val() + "\n" +
+			"Subscribe to Newsletter: " + $( '#subscribe' ).is( ':checked' ) + "\n" +
+			"Additional Comments: " + "\n" +
+			$( '#comments' ).val();
+
+        e.preventDefault();
+        if ( form.parsley('validate') ) {
+            // alert('about to submit');
+            // do ajax here  
+			$.ajax({
+				type: "POST",
+				url: 'http://projects.katietully.com/stewartstewart/email.php',
+				data: {
+					email_to: emailTo
+					, email_subject: emailSubj
+					, email_message: emailText
+					, email_from: emailFrom
+				},
+				success: function( data ) { console.log( data ); }
+				// if ( data == "1" )
+			});
+
+			$.post("email.php", $(this).serialize());
+
+			confirmMsg.removeClass('disp-none');
+			formCont.addClass('disp-none');
+			// alert('after submit');   
+        } else {
+        	errorMsg.removeClass('disp-none');
+        	// alert('not validated');
+        }
+	});
+}
+submitParsley();
 
 
 

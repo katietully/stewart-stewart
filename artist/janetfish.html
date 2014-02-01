@@ -13,6 +13,7 @@
 
 	<!-- C S S  S T Y L E S H E E T S -->
 	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/chosen.min.css">
 	<link rel="stylesheet" href="../css/styles.css">
 
 
@@ -24,43 +25,43 @@
 	<header>
 		<div class="container">
 			<form class="artist-jump">
-				<select>
-					<option value="0">JUMP TO ARTIST</option>
+				<select 
+					id="artist-jump"
+					data-placeholder="Jump to Artist">
+					<option value=""></option>
 					<option 
-						value="Artist1">
-						Artist1
+						value="Artist1">Artist1
 					</option>
 					<option 
-						value="Artist2">
-						Artist2 Lorem Ipsum Dolor Sit
+						value="Artist2">Artist2 Lorem Ipsum Dolor Sit
 					</option>
 					<option 
-						value="Artist3">
-						Artist3
+						value="Artist3">Artist3
 					</option>
 				</select>
 			</form>
-			<div class="logo"><a href="../index.html">Stewart &amp; Stewart</a>
-			</div>
+			<a href="../index.html"><div class="logo">
+				<!-- <img class="logo" src="image/stewart_logo_sprite.png" /> -->
+			</div></a>
 			<nav class="main-nav">
 				<ul>
 					<li>
-						<a href="browse.html">Browse</a>
+						<a href="../browse.html">Browse</a>
 					</li>
 					<li>
-						<a href="inventory.html">Inventory / Pricelist</a>
+						<a href="../inventory.html">Inventory / Pricelist</a>
 					</li>
 					<li>
-						<a href="order.html">Order</a>
+						<a href="../order.html">Order</a>
 					</li>
 					<li>
-						<a href="learnmore.html">Learn More</a>
+						<a href="../learnmore.html">Learn More</a>
 					</li>
 					<li>
-						<a href="about.html">About Us</a>
+						<a href="../about.html">About Us</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="../contact.html">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -71,7 +72,7 @@
 			
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/400" />
+				<img src="../image/janet-fish/treille-xs.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Treille
@@ -81,7 +82,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/200" />
+				<img src="../image/janet-fish/ordering-spring-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Ordering Spring
@@ -91,7 +92,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/250" />
+				<img src="../image/janet-fish/daffodils-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Daffodils
@@ -101,7 +102,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/300" />
+				<img src="../image/janet-fish/am-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						A.M.
@@ -111,7 +112,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/450" />
+				<img src="../image/janet-fish/waimea-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Waimea
@@ -121,7 +122,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/520" />
+				<img src="../image/janet-fish/cerises-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Cerises
@@ -131,7 +132,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/120" />
+				<img src="../image/janet-fish/rose-bowl-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Rose Bowl
@@ -141,7 +142,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/250" />
+				<img src="../image/janet-fish/leyden-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Leyden
@@ -151,7 +152,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/300" />
+				<img src="../image/janet-fish/butterfly-wings-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Butterfly Wings
@@ -161,7 +162,7 @@
 			</div>
 			<div class="brick">
 				<div class="art-bbar bbar"></div>
-				<img src="http://placekitten.com/300/450" />
+				<img src="../image/janet-fish/bananas-small.jpg" />
 				<div class="caption">
 					<div class="print-title">
 						Bananas
@@ -174,7 +175,7 @@
 				Biographical Sketch
 		</div>
 		<div class="artist-bio row">
-			<img class="bioimg col" src="http://placekitten.com/400/550" />
+			<img class="bioimg col" src="../image/janet-fish/janet-fish.jpg" />
 			<div class="biosketch col">
 				<h1>Janet Fish</h1>
 				<p>
@@ -216,10 +217,13 @@
 					<li>248.626.5248</li>
 					<li>info@StewartStewart.com</li>
 				</ul>
-				<div class="foot-deets col">Member of the IFPDA</div>
+				<ul class="foot-deets col">
+					<li>Member of the IFPDA</li>
+					<li><img src="../image/ifpda.png"></li>
+				</ul>
 				<ul class="foot-deets col">
 					<li>Website: &copy; Stewart &amp; Stewart 2014</li>
-					<li>All images are © by the individual artist the date of completion.</li>
+					<li>All images are &copy; by the individual artist the date of completion.</li>
 					<li>Images may be reproduced for educational &amp; noncommercial use with &copy; citation.</li>
 				</ul>
 			</div>
