@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+	<head>
+
+	</head>
+	<body>
+		<form>
+			<input type="text" placeholder="Your Email" id="email_from" />
+			<input type="text" placeholder="Email Subject" id="email_subject" />
+			<input type="text" placeholder="Email Text" id="email_text" />
+			<input type="hidden" value="katie@katietully.com" id="email_to" />
+			<input type="submit" value="submit" id="submit" />
+		</form>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+
+			$( '#submit' ).click( function( e ) {
+				e.preventDefault();
+
+				var emailFrom = $( '#email_from' ).val()
+					, emailSubj = $( '#email_subject' ).val()
+					, emailText = $( '#email_text' ).val()
+					, emailTo = $( '#email_to' ).val();
+
+				// do some form validation if you want 
+
+				$.ajax({
+					type: "POST",
+					url: 'http://projects.katietully.com/stewartstewart/email.php',
+					data: {
+						email_to: emailTo
+						, email_subject: emailSubj
+						, email_message: emailText
+						, email_from: emailFrom
+					},
+					success: function( data ) { console.log( data ); }
+					// if ( data == "1" )
+				});
+
+			});
+			
+		</script>
+	</body>
+</html>

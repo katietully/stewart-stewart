@@ -12,8 +12,8 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 	<!-- C S S  S T Y L E S H E E T S -->
-	<link rel="stylesheet" href="css/chosen.min.css">
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/chosen.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 
 
@@ -21,28 +21,28 @@
 	<script src="js/modernizr-custom.min.js"></script>
 
 </head>
-<body>
+<body class="body-form">
 	<header>
 		<div class="container">
 			<form class="artist-jump">
-				<select>
-					<option value="0">JUMP TO ARTIST</option>
+				<select 
+					id="artist-jump"
+					data-placeholder="Jump to Artist">
+					<option value=""></option>
 					<option 
-						value="Artist1">
-						Artist1
+						value="Artist1">Artist1
 					</option>
 					<option 
-						value="Artist2">
-						Artist2 Lorem Ipsum Dolor Sit
+						value="Artist2">Artist2 Lorem Ipsum Dolor Sit
 					</option>
 					<option 
-						value="Artist3">
-						Artist3
+						value="Artist3">Artist3
 					</option>
 				</select>
 			</form>
-			<div class="logo"><a href="index.html">Stewart &amp; Stewart</a>
-			</div>
+			<a href="index.html"><div class="logo">
+				<!-- <img class="logo" src="image/stewart_logo_sprite.png" /> -->
+			</div></a>
 			<nav class="main-nav">
 				<ul>
 					<li>
@@ -70,59 +70,93 @@
 	<div class="page">
 		<div class="row">
 			<div class="form-intro col">
-				<div class="art-bbar bbar"></div>
-				<div class="introtext">
-					<div class="introtext-sect">
-						<h2>Ordering Fine Prints</h2>
-						<p>
-							If you would like to order fine prints from Stewart &amp; Stewart, email us at info@StewartStewart.com or fill out this order form and click submit button below. We will contact you once we receive your information to continue the ordering process.
-						</p>
-					</div>
-					<div class="introtext-sect">
-						<h2>Have a general inquiry?</h2>
-						<p>
-							If you would like to contact us about something else, please use our <a href="contact.html">General Contact Form</a> instead.
-						</p>
-					</div>
-				</div>
+				<div class="form-bbar bbar">Ordering Process</div>
+				<p class="introtext">
+					If you would like to order fine prints from Stewart &amp; Stewart, email us at <a href="mailto:info@stewartstewart.com">info@StewartStewart.com</a> or fill out our order form and click submit button below. We will contact you once we receive your information to continue the ordering process.
+				</p>
+				<div class="row-sp"></div>
+				<div class="form-bbar bbar">Have a General Inquiry?</div>
+				<p class="introtext">
+					If you would like to contact us about something else, please use our <a href="contact.html">General Contact Form</a> instead.
+				</p>
 			</div>  <!-- CLOSE FORM INTRO -->
-			<form class="form-container col" id="email-form">
-				<div class="art-bbar bbar"></div>
+			
+			<div class="form-container col" id="submit-confirm" parsley-validate novalidate>
+				<div class="form-bbar bbar">Order Inquiry Form</div>
+				<div class="submit-msg">
+					<h2>Thanks for Contacting Us</h2>
+					<p>Your form was submitted. We'll get back to you shortly.</p>
+				</div>
+			</div>
+			<div class="form-container col" id="submit-error" parsley-validate novalidate>
+				<div class="form-bbar bbar">Order Inquiry Form</div>
+				<div class="submit-msg">
+					<h2>Oops, there was a problem!</h2>
+					<p>Your form was not submitted. Please try again.</p>
+				</div>
+			</div>
+
+			<form class="form-container col" id="email-form" parsley-validate novalidate>
+				<div class="form-bbar bbar">Order Inquiry Form</div>
 				<div class="fieldset-cont">
 					<filedset
 						action="" 
 						method="POST"
 						class="order-form">
 						<legend>Your Contact Information</legend>
-						<label class="form-field" for="firstname">First Name</label>
+						<label class="form-field" for="firstname">First Name*</label>
 						<input 
 							placeholder="First" 
 							type="text" 
 							name="firstname" 
 							id="firstname" 
-							class="firstname"
-							required />
-						<label for="lastname">Last Name</label>
+							class="firstname required"
+							required
+							parsley-trigger="focusin focusout"
+							parsley-required="true" />
+						<label for="lastname">Last Name*</label>
 						<input 
 							placeholder="Last" 
 							type="text" 
 							name="lastname" 
 							id="lastname" 
-							class="lastname" />
-						<label for="email">Email</label>
+							class="lastname required"
+							required
+							parsley-trigger="focusin focusout"
+							parsley-required="true" />
+						<label for="email">Email*</label>
 						<input 
 							placeholder="name@sample.com" 
 							type="text" 
 							name="email" 
-							id="email" 
-							class="email" />
+							id="email_from" 
+							class="email required"
+							required
+							parsley-type="email"
+							parsley-trigger="focusin focusout"
+							parsley-validation-minlength="1"
+							parsley-required="true"
+							parsley-type-email-message="Please enter a valid email address"
+							parsley-required-message="This field is required" />
 						<label for="phone">Phone</label>
 						<input 
 							placeholder="XXX-XXX-XXXX" 
 							type="text" 
 							name="phone" 
 							id="phone" 
-							class="phone" />
+							class="phone"
+							parsley-type="phone"
+							parsley-trigger="focusin focusout"
+							parsley-validation-minlength="1"
+							parsley-type-phone-message="Please enter a valid phone number: 000-000-0000 x00" />
+						<label for="otherphonetrap" class="otherphonetrap">Other Phone</label>
+						<input 
+							type="text" 
+							name="otherphonetrap" 
+							autofill="off"
+							id="otherphonetrap" 
+							class="otherphonetrap"
+							parsley-notblank="false" />
 						<label for="address">Address</label>
 						<input 
 							placeholder="Address Line 1" 
@@ -236,30 +270,41 @@
 							<option value="Work3">Works 3</option>
 						</select>
 
-						<legend>Additional Comments</legend>
+						<legend>Message</legend>
 						<textarea
 							type="text" 
 							name="comments" 
 							id="comments" 
-							class="comments">
-						</textarea>
+							class="comments"></textarea>
 						<input 
 							type="checkbox" 
 							name="subscribe" 
 							value="subscribe"
 							id="subscribe"
-							class="subscribe" />
+							class="subscribe"
+							checked />
 							<div class="subscribe-text">
 								I would like to receive email updates from Stewart &amp; Stewart about new prints and upcoming events
 							</div>
-
+						<input 
+							type="hidden" 
+							value="Order Form Inquiry" 
+							id="email_subject" />
+						<input 
+							type="hidden" 
+							value="katie@katietully.com" 
+							id="email_to" />
+						<input 
+							type="submit" 
+							value="submit"
+							id="submit"
+							class='submit-button' />
 					</fieldset>
-						<div class='submit-button'>Submit</div>
-				</div>		
+						
+				</div>	<!-- CLOSE fieldset-cont-->	
 			</form>
-
-		</div>  <!-- CLOSE ROW -->
-    </div>  <!-- CLOSE PAGE -->
+		</div>  <!-- CLOSE row -->
+    </div>  <!-- CLOSE page -->
     <footer>
 			<div class="more-info">Visuals and complete sales information are available on request</div>
 			<div class="break"> </div>
@@ -282,10 +327,13 @@
 					<li>248.626.5248</li>
 					<li>info@StewartStewart.com</li>
 				</ul>
-				<div class="foot-deets col">Member of the IFPDA</div>
+				<ul class="foot-deets col">
+					<li>Member of the IFPDA</li>
+					<li><img src="image/ifpda.png"></li>
+				</ul>
 				<ul class="foot-deets col">
 					<li>Website: &copy; Stewart &amp; Stewart 2014</li>
-					<li>All images are © by the individual artist the date of completion.</li>
+					<li>All images are &copy; by the individual artist the date of completion.</li>
 					<li>Images may be reproduced for educational &amp; noncommercial use with &copy; citation.</li>
 				</ul>
 			</div>
@@ -298,6 +346,7 @@
 	<script src="js/gridpak.demo.js"></script>
 	<script src="js/freewall.js"></script>
 	<script src="js/chosen.jquery.js"></script>
+	<script src="js/parsley.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>

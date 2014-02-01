@@ -38,7 +38,7 @@ legend {
     line-height: 1.25em;
 }
 legend,
-.introtext-sect {
+.introtext {
     padding-top: 1.5em;
 }
 p,
@@ -47,7 +47,7 @@ ul.inv-list {
     padding-top: 1em;
 }
 label,
-.introtext-sect p {
+.introtext p {
     padding-top: .5em;
 }
 ul li:first-child,
@@ -55,12 +55,17 @@ ul li:first-child,
 legend:first-child,
 .feat-maintext p:first-child,
 .feat-order p,
-.introtext-sect:first-child {
+.introtext:first-child {
     padding-top: 0;
 }
-.caption {
+.caption,
+.parsley-error-list {
     font-size: .8em;
     line-height: 1.2em;
+}
+.parsley-error-list {
+    color: #cc3f35;
+    font-style: italic;
 }
 .bold,
 .caption .print-title {
@@ -71,7 +76,10 @@ legend:first-child,
 .inv-list .print-title {
     font-style: italic;
 }
-header {
+.uline {
+    text-decoration: underline;
+}
+header nav {
 	font-family: "nimbus-sans", Arial, sans-serif;
 	color: white;
 }
@@ -94,6 +102,7 @@ header {
 	font-family: "nimbus-sans", Arial, sans-serif;
 }
 p a,
+li a,
 p a:visited,
 .inv-artist a,
 .inv-artist a:visited {
@@ -101,11 +110,12 @@ p a:visited,
     text-decoration: none;
 }
 p a:hover,
+li a:hover,
 .inv-artist a:hover {
     color: #39b3ee;
     text-decoration: none;
 }
-.submit-button {
+input.submit-button {
     font-family: "nimbus-sans", Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -382,9 +392,11 @@ Span 12: 100%
     .form-container {
         width:49.375%;
     }
-    .span_6,
+    .span6inside,
     .form-intro .introtext,
-    .fieldset-cont {
+    .fieldset-cont,
+    .submit-msg,
+    .form-bbar {
         padding: 0 4.0506%;
     }
     .span_7 {
@@ -464,8 +476,8 @@ Span 12: 100%
     width: 100%;
     max-width: 100%;
 }
-
-
+ 
+ 
 
 /*****  L A Y O U T  *****/
 
@@ -473,30 +485,41 @@ Span 12: 100%
 
 header {
 	width:100%;
-	height:128px;
-	background-color:black;
+	height:120px;
+	background-color: #2e2c2d;
 }
 header .container {
     width: 93%;
     margin: 0 auto;
-    padding-top: 30px;
-    overflow: hidden;
+    padding-top: 22px;
+    /*overflow: hidden;*/
 }
-.logo{
+.logo {
 	float: left;
-	vertical-align: baseline;
+    clear: both;
+    height: 49px;
+    width: 350px;
+    /*margin-top: 27px;*/
+    background: url('../image/stewart_logo_beige.png') 0 0;
+    background-size: 100%;
+    opacity: .5;
 }
+/*.logo a:hover{
+    background-image: url(image/stewart_logo_sprite.png) 0 50%;
+}*/
+
 .artist-jump {
 	display: block;
-	overflow: hidden;
-
+    float: right;
+    clear: left;
+    width: 20%;
 }
-.artist-jump select {
+/*.artist-jump select {
 	float: right;
-}
+}*/
 .main-nav {
 	float: right;
-	vertical-align: baseline;
+    margin-top: 30px;
 }
 .main-nav li {
 	display: inline-block;
@@ -521,7 +544,8 @@ header .container {
 .feat-eventstext,
 .biosketch,
 .introtext,
-.fieldset-cont {
+.fieldset-cont,
+.submit-msg {
     vertical-align: top;
     margin-top: 14px;
     margin-bottom: 20px;
@@ -534,6 +558,11 @@ header .container {
 .bio-bbar {
     margin-top: 16px;
 }
+.row-sp {
+    height: 16px;
+    width: 100%;
+    background-color: #eae9e5;
+}
 .feat-order .card-head {
     padding: 0 -7.8%;
 }
@@ -542,7 +571,7 @@ header .container {
 /*****  M A I N :  C A R D S  *****/
 .bbar {
     color: white;
-    background-color: black;
+    background-color: #2e2c2d;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -559,7 +588,6 @@ header .container {
     padding-bottom: 0;
 }
 .bioimg {
-    /*width: 100%;*/
     margin-top: 18px;
 }
 /*.artist-bio .biosketch,
@@ -569,11 +597,17 @@ header .container {
 .caption {
     padding: 16px 18px 20px 18px;
 }
-
+.feat-mainimg .caption {
+    padding: 16px 0 20px 0;
+}
 /*****  M A I N :  C E N T E R E D  A R E A S  *****/
 .inventory {
 	margin: 0 auto;
 }
+
+
+/*****  M A I N :  F O R M S  *****/
+
 input::-webkit-input-placeholder { /* WebKit browsers */
     color: #666;
 }
@@ -614,13 +648,16 @@ textarea.comments {
     font-family: sans-serif;
     line-height: normal;
 }
+input.address2 {
+    margin-top: 7px;
+}
 input:focus,
 textarea:focus {
     outline: none;
     border: 1px solid #5897fb;
     -webkit-box-shadow: 0 0 5px rgba(0,0,0,.3);
     -moz-box-shadow: 0 0 5px rgba(0,0,0,.3);
-    box-shadow: 0 0 5px rgba(0,0,0,.3);;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 textarea.comments {
     height:150px;
@@ -633,6 +670,13 @@ input[type="checkbox"] {
     vertical-align: text-top;
     width: 6%;
     margin: 21px 0 0 0;
+}
+input[type="checkbox"]:focus {
+    outline: none;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
 }
 .state-cont {
     display: inline-block;
@@ -651,20 +695,39 @@ input[type="checkbox"] {
     width: 92%;
     margin-top: 20px;
 }
-.submit-button {
+input.submit-button {
     width: 62.786%;
     padding: 10px 20px;
-    margin: 0 auto;
-    margin-top: 24px;
+    margin: 24px 18.607% 0 18.607%;
 	background-color: #229dd8;
+    border: none;
     color: white;
     text-align: center;
+    font-size: 1em;
+    cursor: pointer;
 }
+input.submit-button:hover {
+    background-color: #39b3ee;
+}
+input.submit-button:active {
+    background-color: #229dd8;
+}
+.disp-none,
+.otherphonetrap {
+    display: none;
+}
+
+/*****  P A R S L E Y  F O R M  V A L I D A T I O N  *****/
+
+input.parsley-error {
+    border: 1px solid #cc3f35;
+}
+
 
 /*****  F O O T E R  *****/
 
 footer {
-	background-color: black;
+	background-color: #2e2c2d;
 	margin-top: 18px;
 }
 footer .more-info {
@@ -674,12 +737,15 @@ footer .more-info {
 footer .break {
     width: 100%;   
     height: 1px;
-    background-color: #222;
+    background-color: #333;
     margin: 22px 0;
 }
 .row .foot-deets {
 	display: inline-block;
     padding: 0;
+}
+.foot-deets img {
+    width: 100%;
 }
 
 
