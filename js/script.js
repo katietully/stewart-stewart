@@ -46,11 +46,14 @@ function initChosen() {
 		width: "100%",
 		no_results_text: "We couldn't find an artist named"
 	});
+<<<<<<< HEAD
 	$('#artist-jump').on('change', function(evt, params) {
 		if(document.getElementById('artist-jump').value){
 			window.location.href = document.getElementById('artist-jump').value;
 		}
   	});
+=======
+>>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 	$("#state").chosen({
 		search_contains: true,
 		width: "100%",

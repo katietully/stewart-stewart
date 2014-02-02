@@ -393,6 +393,43 @@ header {
     .related_content,
     .media_block,
     .feat-order,
+<<<<<<< HEAD
+=======
+    .bioimg {
+        width:32.5%;
+    }
+    .span_4merge,
+    .feat-mainimg,
+    .bioimg {
+        padding: 0 0 0 2%;
+    }
+    .span4inside,
+    .order-bbar,
+    .feat-ordertext {
+        padding: 0 6.1538%;
+    }
+    
+    .span_5 {
+        width:40.9375%;
+    }
+    .span_6,
+    .form-intro,
+    .form-container {
+        width:49.375%;
+    }
+    .span6inside,
+    .form-intro .introtext,
+    .fieldset-cont,
+    .submit-msg,
+    .form-bbar {
+        padding: 0 4.0506%;
+    }
+    .span_7 {
+        width:57.8125%;
+    }
+    .span_8,
+    .feat-maintext,
+>>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
     .feat-events,
     .footer {
         width:100%;
@@ -463,10 +500,15 @@ header {
 
 header {
 	width:100%;
+<<<<<<< HEAD
 	/*height:120px;*/
 	background-color: #2e2c2d;
     /*overflow: hidden;*/
     padding-bottom: 10px;
+=======
+	height:120px;
+	background-color: #2e2c2d;
+>>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 }
 header .container {
     width: 93%;
@@ -587,6 +629,7 @@ header .container {
 .inventory {
 	margin: 0 auto;
 }
+<<<<<<< HEAD
 .spin-cont {
     margin: 0 auto;
     width: 30px;
@@ -595,6 +638,9 @@ header .container {
     width: 100%;
     margin-top: 15px;
 }
+=======
+
+>>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 
 /*****  M A I N :  F O R M S  *****/
 
@@ -698,6 +744,16 @@ input.submit-button {
 }
 input.submit-button:hover {
     background-color: #39b3ee;
+<<<<<<< HEAD
+=======
+}
+input.submit-button:active {
+    background-color: #229dd8;
+}
+.disp-none,
+.otherphonetrap {
+    display: none;
+>>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 }
 input.submit-button:active {
     background-color: #229dd8;
@@ -706,6 +762,13 @@ input.submit-button:active {
 .otherphonetrap {
     display: none;
 }
+
+/*****  P A R S L E Y  F O R M  V A L I D A T I O N  *****/
+
+input.parsley-error {
+    border: 1px solid #cc3f35;
+}
+
 
 /*****  P A R S L E Y  F O R M  V A L I D A T I O N  *****/
 
