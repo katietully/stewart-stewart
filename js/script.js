@@ -28,6 +28,7 @@ function initFreewall() {
 	images.find('img').load(function() {
 		-- length;
 		if (!length) {
+			$('.spinner').addClass('disp-none');
 			setTimeout(function() {
 				images.css({visibility: 'visible'});
 				wall.fitWidth();
@@ -45,6 +46,11 @@ function initChosen() {
 		width: "100%",
 		no_results_text: "We couldn't find an artist named"
 	});
+	$('#artist-jump').on('change', function(evt, params) {
+		if(document.getElementById('artist-jump').value){
+			window.location.href = document.getElementById('artist-jump').value;
+		}
+  	});
 	$("#state").chosen({
 		search_contains: true,
 		width: "100%",

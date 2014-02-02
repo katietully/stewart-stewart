@@ -183,160 +183,14 @@ the gridpak.js file to use '.page' as it's container.
 }
 
 
-
-/* 1. 2 Column Grid 0px - 499px 
------------------------------------------------------------------------------ 
-
-Span 1: 50%
-Span 2: 100%
-
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 0px) and (max-width: 499px) {
-    
-    /*.row .col:first-child {
-        margin-left:0;
-    }*/
-    .row {
-        overflow: hidden;
-    }
-    .col {
-        margin-left:0;
-    	padding:0 3%;
-    }
-    
-    
-    /*
-    Add your semantic classnames in alongside their corresponding spans here. e.g.
-    
-    .span_3,
-    .my_semantic_class_name {
-        ...
-    }
-    */
-    .header,
-    .span_1 {
-        width:48%;
-    }
-    /* Using .col to target ALL columns and make them 100% */
-    .span_2,
-    .navigation,
-    .main_content,
-    .related_content,
-    .media_block,
-    .feat-order,
-    .feat-events,
-    .footer {
-        width:100%;
-        margin-left:0;
-    }
-    .span_2inside,
-    .feat-mainimg,
-    .feat-maintext,
-    .feat-ordertext,
-    .feat-eventstext {
-        padding: 0 4%;
-    }
-    .span-container,
-    .feature,
-    .feat-order,
-    .feat-events {
-        padding: 0;
-    }
-}
-
-/* 2. 6 Column Grid 500px - 779px 
------------------------------------------------------------------------------ 
-
-Span 1: 15.0%
-Span 2: 32.0%
-Span 3: 49.0%
-Span 4: 66.0%
-Span 5: 83.0%
-Span 6: 100%
-
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 500px) and (max-width: 779px) {
-    
-    .col {
-        margin-left:2%;
-    	padding:0 3%;
-    }
-    
-    .row .col:first-child {
-        margin-left:0;
-    }
-    
-    /*
-    Add your semantic classnames in alongside their corresponding spans here. e.g.
-    
-    .span_3,
-    .my_semantic_class_name {
-        ...
-    }
-    */
-    
-    .span_1 {
-        width:15.0%;
-    }
-    /*
-    Here we have used our semantic names 'navigation' and 'media_block' and appended
-    them next to their corresponding widths
-    */
-    .span_2,
-    .navigation,
-    .media_block {
-        width:32.0%;
-    }
-    .navigation {
-        height: 400px;
-    }
-    .span_3 {
-        width:49.0%;
-    }
-    .span_4,
-    .main_content {
-        width:66.0%;
-        height: 400px;
-    }
-    .span_5 {
-        width:83.0%;
-    }
-    .span_6,
-    .header,
-    .footer,
-    .related_content {
-        width:100%;
-        height: 100px;
-        margin-left:0;
-    }
-}
-
-/* 3. 12 Column Grid 780px - Infinity 
------------------------------------------------------------------------------ 
-
-Span 1: 6.5%
-Span 2: 15%
-Span 3: 23.5%
-Span 4: 32%
-Span 5: 40.5%
-Span 6: 49%
-Span 7: 57.5%
-Span 8: 66%
-Span 9: 74.5%
-Span 10: 83%
-Span 11: 91.5%
-Span 12: 100%
-
+/* 12 Column Grid 780px - Infinity 
 ----------------------------------------------------------------------------- */
 
 @media screen and (min-width: 780px) {
     
-    
     .col {
         margin-left:1.25%;
-    	padding:0 2%;
+        padding:0 2%;
     }
     .row {
         overflow: hidden;
@@ -344,15 +198,8 @@ Span 12: 100%
     .row .col:first-child {
         margin-left:0;
     }
+
     
-    /*
-    Add your semantic classnames in alongside their corresponding spans here. e.g.
-    
-    .span_3,
-    .my_semantic_class_name {
-        ...
-    }
-    */
     
     .span_1 {
         width:7.1875%;
@@ -448,6 +295,125 @@ Span 12: 100%
     }
 }
 
+/* 12 Column Grid 780px - 1040px  H E A D E R  F I X 
+----------------------------------------------------------------------------- */
+
+/*@media screen and (min-width: 780px) and (max-width: 1040px) {
+
+header {
+    height:250px;
+}*/
+
+
+/* 6 Column Grid 500px - 779px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 500px) and (max-width: 779px) {
+    
+    .col {
+        margin-left:2%;
+    	padding:0 3%;
+    }
+    
+    .row .col:first-child {
+        margin-left:0;
+    }
+    
+    /*
+    Add your semantic classnames in alongside their corresponding spans here. e.g.
+    
+    .span_3,
+    .my_semantic_class_name {
+        ...
+    }
+    */
+    
+    .span_1 {
+        width:15.0%;
+    }
+    /*
+    Here we have used our semantic names 'navigation' and 'media_block' and appended
+    them next to their corresponding widths
+    */
+    .span_2,
+    .navigation,
+    .media_block {
+        width:32.0%;
+    }
+    .navigation {
+        height: 400px;
+    }
+    .span_3 {
+        width:49.0%;
+    }
+    .span_4,
+    .main_content {
+        width:66.0%;
+        height: 400px;
+    }
+    .span_5 {
+        width:83.0%;
+    }
+    .span_6,
+    .header,
+    .footer,
+    .related_content {
+        width:100%;
+        height: 100px;
+        margin-left:0;
+    }
+}
+
+
+/* 2 Column Grid 0px - 499px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 499px) {
+    
+    /*.row .col:first-child {
+        margin-left:0;
+    }*/
+    .row {
+        overflow: hidden;
+    }
+    .col {
+        margin-left:0;
+        padding:0 3%;
+    }
+    
+
+    .header,
+    .span_1 {
+        width:48%;
+    }
+    /* Using .col to target ALL columns and make them 100% */
+    .span_2,
+    .navigation,
+    .main_content,
+    .related_content,
+    .media_block,
+    .feat-order,
+    .feat-events,
+    .footer {
+        width:100%;
+        margin-left:0;
+    }
+    .span_2inside,
+    .feat-mainimg,
+    .feat-maintext,
+    .feat-ordertext,
+    .feat-eventstext {
+        padding: 0 4%;
+    }
+    .span-container,
+    .feature,
+    .feat-order,
+    .feat-events {
+        padding: 0;
+    }
+}
+
+
 
 
 /*****  F R E E W A L L  *****/
@@ -482,11 +448,25 @@ Span 12: 100%
 /*****  L A Y O U T  *****/
 
 /*****  H E A D E R  *****/
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
 
 header {
 	width:100%;
-	height:120px;
+	/*height:120px;*/
 	background-color: #2e2c2d;
+    /*overflow: hidden;*/
+    padding-bottom: 10px;
 }
 header .container {
     width: 93%;
@@ -523,6 +503,9 @@ header .container {
 }
 .main-nav li {
 	display: inline-block;
+}
+.clear {
+    clear: both;
 }
 
 /*****  M A I N :  H O M E  *****/
@@ -604,7 +587,14 @@ header .container {
 .inventory {
 	margin: 0 auto;
 }
-
+.spin-cont {
+    margin: 0 auto;
+    width: 30px;
+}
+.spinner {
+    width: 100%;
+    margin-top: 15px;
+}
 
 /*****  M A I N :  F O R M S  *****/
 
