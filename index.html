@@ -24,17 +24,14 @@
 <body>
 	<header class="clearfix">
 		<div class="container">
+			
 			<form class="artist-jump">
 				<select 
 					id="artist-jump"
 					data-placeholder="Jump to Artist">
 					<option value=""></option>
 					<option 
-<<<<<<< HEAD
-						value="artist/janet-fish.html">Janet Fish
-=======
-						value="Artist1">Artist1
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
+						value="artist/janetfish.html">Janet Fish
 					</option>
 					<option 
 						value="Artist2">Artist2 Lorem Ipsum Dolor Sit
@@ -44,7 +41,8 @@
 					</option>
 				</select>
 			</form>
-			<a href="index.html"><div class="logo">
+			
+			<a href="index.html" class="logo-cont"><div class="logo">
 				<!-- <img class="logo" src="image/stewart_logo_sprite.png" /> -->
 			</div></a>
 			<nav class="main-nav">
@@ -70,8 +68,36 @@
 				</ul>
 				<div style="clear: both;"></div>
 			</nav>
-		</div>
-	</header>
+
+		</div> <!-- CLOSE container -->
+		<div class="ham-nav">
+				<input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
+				<nav class="ham-menu">
+				  <ul>
+				    <li>
+						<a href="browse.html">Browse</a>
+					</li>
+					<li>
+						<a href="inventory.html">Inventory / Pricelist</a>
+					</li>
+					<li>
+						<a href="order.html">Order</a>
+					</li>
+					<li>
+						<a href="learnmore.html">Learn More</a>
+					</li>
+					<li>
+						<a href="about.html">About Us</a>
+					</li>
+					<li>
+						<a href="contact.html">Contact</a>
+					</li>
+				  </ul>
+				  
+				  <label for="navbar-checkbox" class="navbar-handle">MENU</label>
+				</nav>
+			</div> <!-- CLOSE ham-nav -->
+	</header> <!-- CLOSE clearfix -->
 	<div class="page">
 		<div class="feature">
 			<div class="row">
@@ -122,20 +148,20 @@
     </div>
 		
     <footer>
-			<div class="more-info">Visuals and complete sales information are available on request</div>
-			<div class="break"> </div>
+		<div class="more-info">Visuals and complete sales information are available on request</div>
+		<div class="break"> </div>
 		<div class="page">
 			<div class="row">
-				<ul class="foot-deets col">
-					<li>Home</li>
-					<li>Browse</li>
-					<li>Inventory/Pricelist</li>
-					<li>Order</li>
-					<li>Learn More</li>
-					<li>About Us</li>
-					<li>Contact</li>
+				<ul class="foot-deets foot-sm col">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="browse.html">Browse</a></li>
+					<li><a href="inventory.html">Inventory / Pricelist</a></li>
+					<li><a href="order.html">Order</a></li>
+					<li><a href="learnmore.html">Learn More</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="contact.html">Contact</a></li>
 				</ul>
-				<ul class="foot-deets col">
+				<ul class="foot-deets foot-sm col">
 					<li>Stewart &amp; Stewart</li>
 					<li>5571 Wing Lake Road</li>
 					<li>Bloomfield Hills MI</li>
@@ -143,17 +169,37 @@
 					<li>248.626.5248</li>
 					<li>info@StewartStewart.com</li>
 				</ul>
-				<ul class="foot-deets col">
-					<li>Member of the IFPDA</li>
-					<li><img src="image/ifpda.png"></li>
+				<ul class="foot-deets foot-sm foot-xs col">
+					<li>Member of IFPDA</li>
+					<li><a href="http://www.ifpda.org/" target="_blank"><img src="image/ifpda2.png" alt="IFPDA logo"></a></li>
 				</ul>
-				<ul class="foot-deets col">
-					<li>Website: &copy; Stewart &amp; Stewart 2014</li>
-					<li>All images are &copy; by the individual artist the date of completion.</li>
+				<ul class="foot-deets foot-sm foot-xs col">
+					<li>Member of CINOA</li>
+					<li><a href="http://www.cinoa.org/" target="_blank"><img src="image/cinoa.png" alt="CINOA logo"></a></li>
+				</ul>
+				<ul class="copy-col foot-deets foot-lg col">
+					<li>Website &copy; Stewart &amp; Stewart 2014</li>
+					<li>All images are &copy; Stewart &amp; Stewart or the individual artist.</li>
 					<li>Images may be reproduced for educational &amp; noncommercial use with &copy; citation.</li>
 				</ul>
-			</div>
-		</div>
+			</div> <!-- CLOSE row -->
+			<div class="row">
+				<ul class="foot-deets foot-org col">
+					<li>Member of IFPDA</li>
+					<li><a href="http://www.ifpda.org/" target="_blank"><img src="image/ifpda2.png" alt="IFPDA logo"></a></li>
+				</ul>
+				<ul class="foot-deets foot-org col">
+					<li>Member of CINOA</li>
+					<li><a href="http://www.cinoa.org/" target="_blank"><img src="image/cinoa.png" alt="CINOA logo"></a></li>
+				</ul>
+			</div> <!-- CLOSE row -->
+			<div class="row">
+				<ul class="foot-deets col copy-under">
+					<li>Website &copy; Stewart &amp; Stewart 2014</li>
+					<li>All images are &copy; Stewart &amp; Stewart or the individual artist. Images may be reproduced for educational &amp; noncommercial use with &copy; citation.</li>
+				</ul>
+			</div> <!-- CLOSE row -->
+		</div> <!-- CLOSE page -->
     </footer>
 
 	

@@ -42,10 +42,10 @@ legend,
     padding-top: 1.5em;
 }
 p,
-ul.feat-eventstext li,
-ul.inv-list {
+ul.feat-eventstext li {
     padding-top: 1em;
 }
+
 label,
 .introtext p {
     padding-top: .5em;
@@ -55,7 +55,8 @@ ul li:first-child,
 legend:first-child,
 .feat-maintext p:first-child,
 .feat-order p,
-.introtext:first-child {
+.introtext:first-child,
+.learn-cont p:first-child {
     padding-top: 0;
 }
 .caption,
@@ -73,7 +74,7 @@ legend:first-child,
     font-style: italic;
 }
 .italic,
-.inv-list .print-title {
+.inv-text .print-title {
     font-style: italic;
 }
 .uline {
@@ -81,22 +82,36 @@ legend:first-child,
 }
 header nav {
 	font-family: "nimbus-sans", Arial, sans-serif;
-	color: white;
 }
-.logo {
+/*.logo {
 	font-size: 2.2em;
+}*/
+.navbar-handle {
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.main-nav a {
+.main-nav a,
+.ham-nav a {
 	font-size: .75em;
 	color: white;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	padding-left: 20px;
 }
-.main-nav a:hover {
+.main-nav a {
+    padding-left: 20px;
+}
+.main-nav a:hover,
+.ham-nav a:hover {
 	color: #229dd8;
 	text-decoration: none;
+}
+.main-nav a.curr-nav,
+.ham-nav a.curr-nav {
+    color: #229dd8;
 }
 .bbar {
 	font-family: "nimbus-sans", Arial, sans-serif;
@@ -121,7 +136,8 @@ input.submit-button {
     letter-spacing: 3px;
     color: white;
 }
-footer {
+footer,
+footer a {
 	color: #eae9e5;
 }
 footer .more-info {
@@ -133,7 +149,7 @@ footer .more-info {
 footer .foot-deets {
     font-family: "nimbus-sans", Arial, sans-serif;
     font-size: .8em;
-    line-height: 1.5em;
+    line-height: 1.2em;
     letter-spacing: 0.5px;
 }
 
@@ -154,7 +170,6 @@ div {
      margin: 0;
      padding:0;
  }
- 
 /*
 Page is our center aligned 93% width container. We have set it's 'position' as relative
 so that the Gridpak overlay will appear in the correct position. We have also updated
@@ -179,14 +194,14 @@ the gridpak.js file to use '.page' as it's container.
     -webkit-background-clip:padding-box !important;
     background-clip:padding-box !important;
     /*background: #777;*/
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 
 /* 12 Column Grid 780px - Infinity 
 ----------------------------------------------------------------------------- */
 
-@media screen and (min-width: 780px) {
+/*@media screen and (min-width: 780px) {*/
     
     .col {
         margin-left:1.25%;
@@ -205,19 +220,19 @@ the gridpak.js file to use '.page' as it's container.
         width:7.1875%;
     }
     
-    .span_2 {
+    .span_2,
+    .foot-sm {
         width:15.625%;
     }
-    .span_3,
-    .navigation,
-    .foot-deets {
+    .span_3 {
         width:24.0625%;
     }
    
     .span_4,
     .feat-mainimg,
     .feat-order,
-    .bioimg {
+    .bioimg,
+    .foot-lg {
         width:32.5%;
     }
     .span_4merge,
@@ -236,14 +251,18 @@ the gridpak.js file to use '.page' as it's container.
     }
     .span_6,
     .form-intro,
-    .form-container {
+    .form-container,
+    .learn-intro {
         width:49.375%;
     }
     .span6inside,
     .form-intro .introtext,
     .fieldset-cont,
     .submit-msg,
-    .form-bbar {
+    .form-bbar,
+    .learn-intro .learn-cont,
+    .learn-bbar,
+    .video-bbar {
         padding: 0 4.0506%;
     }
     .span_7 {
@@ -252,13 +271,14 @@ the gridpak.js file to use '.page' as it's container.
     .span_8,
     .feat-maintext,
     .feat-events,
-    .biosketch,
-    .inventory {
+    .biosketch {
         width:66.25%;
     }
     .span8inside,
     .events-bbar,
-    .feat-events ul {
+    .feat-events ul,
+    .inv-bbar,
+    .inv-text {
         padding: 0 3.077%;
     }
     .span_9 {
@@ -277,238 +297,72 @@ the gridpak.js file to use '.page' as it's container.
     .feature,
     .feature-bbar,
     .artist-bio,
+    .inventory,
     .footer {
         width:100%;
         margin-left:0;
+    }
+    .span12inside,
+    .inv-bbar,
+    .inv-text {
+        padding: 0 2%;
     }
     .span-container,
     .feat-order,
     .feat-events,
     .form-intro,
-    .form-container {
+    .form-container,
+    .inventory,
+    .learn-intro {
         padding: 0;
     }
     .bbar-container,
     .order-bbar,
-    .events-bbar {
+    .events-bbar,
+    .inv-bbar {
         width: 100%;
     }
-}
+/*} */
 
-/* 12 Column Grid 780px - 1040px  H E A D E R  F I X 
------------------------------------------------------------------------------ */
-
-/*@media screen and (min-width: 780px) and (max-width: 1040px) {
-
-header {
-    height:250px;
-}*/
-
-
-/* 6 Column Grid 500px - 779px 
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 500px) and (max-width: 779px) {
-    
-    .col {
-        margin-left:2%;
-    	padding:0 3%;
-    }
-    
-    .row .col:first-child {
-        margin-left:0;
-    }
-    
-    /*
-    Add your semantic classnames in alongside their corresponding spans here. e.g.
-    
-    .span_3,
-    .my_semantic_class_name {
-        ...
-    }
-    */
-    
-    .span_1 {
-        width:15.0%;
-    }
-    /*
-    Here we have used our semantic names 'navigation' and 'media_block' and appended
-    them next to their corresponding widths
-    */
-    .span_2,
-    .navigation,
-    .media_block {
-        width:32.0%;
-    }
-    .navigation {
-        height: 400px;
-    }
-    .span_3 {
-        width:49.0%;
-    }
-    .span_4,
-    .main_content {
-        width:66.0%;
-        height: 400px;
-    }
-    .span_5 {
-        width:83.0%;
-    }
-    .span_6,
-    .header,
-    .footer,
-    .related_content {
-        width:100%;
-        height: 100px;
-        margin-left:0;
-    }
-}
-
-
-/* 2 Column Grid 0px - 499px 
------------------------------------------------------------------------------ */
-
-@media screen and (min-width: 0px) and (max-width: 499px) {
-    
-    /*.row .col:first-child {
-        margin-left:0;
-    }*/
-    .row {
-        overflow: hidden;
-    }
-    .col {
-        margin-left:0;
-        padding:0 3%;
-    }
-    
-
-    .header,
-    .span_1 {
-        width:48%;
-    }
-    /* Using .col to target ALL columns and make them 100% */
-    .span_2,
-    .navigation,
-    .main_content,
-    .related_content,
-    .media_block,
-    .feat-order,
-<<<<<<< HEAD
-=======
-    .bioimg {
-        width:32.5%;
-    }
-    .span_4merge,
-    .feat-mainimg,
-    .bioimg {
-        padding: 0 0 0 2%;
-    }
-    .span4inside,
-    .order-bbar,
-    .feat-ordertext {
-        padding: 0 6.1538%;
-    }
-    
-    .span_5 {
-        width:40.9375%;
-    }
-    .span_6,
-    .form-intro,
-    .form-container {
-        width:49.375%;
-    }
-    .span6inside,
-    .form-intro .introtext,
-    .fieldset-cont,
-    .submit-msg,
-    .form-bbar {
-        padding: 0 4.0506%;
-    }
-    .span_7 {
-        width:57.8125%;
-    }
-    .span_8,
-    .feat-maintext,
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
-    .feat-events,
-    .footer {
-        width:100%;
-        margin-left:0;
-    }
-    .span_2inside,
-    .feat-mainimg,
-    .feat-maintext,
-    .feat-ordertext,
-    .feat-eventstext {
-        padding: 0 4%;
-    }
-    .span-container,
-    .feature,
-    .feat-order,
-    .feat-events {
-        padding: 0;
-    }
-}
-
-
-
-
-/*****  F R E E W A L L  *****/
-
-.free-wall {
-    width: 100%;
-}
-.brick {
-    width: 300px;
-    height: auto;
-    background-color: white;
-}
-/*@media screen and (min-width: 800px) {
-    .brick{
-        width: 250px;
-    }
-}
-@media screen and (max-width: 799px) {
-    .brick{
-        width: 150px;
-    }
-}*/
-
-.brick img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
  
  
 
 /*****  L A Y O U T  *****/
 
 /*****  H E A D E R  *****/
-.clearfix:after {
+/*.clearfix:after {
      visibility: hidden;
      display: block;
      font-size: 0;
      content: " ";
      clear: both;
      height: 0;
-     }
-.clearfix { display: inline-block; }
+}
+.clearfix { display: inline-block; }*/
+/*.clearfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}*/
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
 /* start commented backslash hack \*/
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 
 header {
 	width:100%;
-<<<<<<< HEAD
 	/*height:120px;*/
 	background-color: #2e2c2d;
     /*overflow: hidden;*/
-    padding-bottom: 10px;
-=======
-	height:120px;
+    padding-bottom: 15px;
 	background-color: #2e2c2d;
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 }
 header .container {
     width: 93%;
@@ -522,13 +376,13 @@ header .container {
     height: 49px;
     width: 350px;
     /*margin-top: 27px;*/
-    background: url('../image/stewart_logo_beige.png') 0 0;
+    background: url('../image/stewart_logo.png') no-repeat 0 0;
     background-size: 100%;
-    opacity: .5;
+    opacity: 1;
 }
-/*.logo a:hover{
-    background-image: url(image/stewart_logo_sprite.png) 0 50%;
-}*/
+.logo-cont:hover > div {
+  opacity: 0.8;
+}
 
 .artist-jump {
 	display: block;
@@ -549,6 +403,35 @@ header .container {
 .clear {
     clear: both;
 }
+.ham-nav {
+    display: none;
+}
+.ham-menu {
+    padding: 0;
+    margin-top: 7px;
+    background: #444;
+    min-height: 2em;
+    line-height: 1em;
+}
+.ham-menu ul {
+    -webkit-transition: max-height 0.25s linear; /* For Safari 3.1 to 6.0 */
+    transition: max-height 0.25s linear;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.ham-menu li {
+    -webkit-transition: visibility .25s linear; /* For Safari 3.1 to 6.0 */
+    transition: visibility .25s linear;
+    display: inline-block;
+    padding: .45em 0;
+    margin: 0 3.5%;
+}
+.ham-menu li:first-child {
+    margin-top: 2.5em;
+}
+
+
 
 /*****  M A I N :  H O M E  *****/
 .feature,
@@ -556,7 +439,9 @@ header .container {
 .feat-events,
 .artist-bio,
 .form-intro,
-.form-container {
+.form-container,
+.inventory,
+.learn-intro {
     background-color: white;
 }
 .feat-mainimg {
@@ -570,7 +455,8 @@ header .container {
 .biosketch,
 .introtext,
 .fieldset-cont,
-.submit-msg {
+.submit-msg,
+.inv-text {
     vertical-align: top;
     margin-top: 14px;
     margin-bottom: 20px;
@@ -607,7 +493,7 @@ header .container {
 .artist-bbar,
 .bio-bbar {
     padding-left: 18px;
-    padding-left: 18px;
+    padding-right: 18px;
 }
 .art-bbar {
     padding-bottom: 0;
@@ -625,11 +511,10 @@ header .container {
 .feat-mainimg .caption {
     padding: 16px 0 20px 0;
 }
+
+
 /*****  M A I N :  C E N T E R E D  A R E A S  *****/
-.inventory {
-	margin: 0 auto;
-}
-<<<<<<< HEAD
+
 .spin-cont {
     margin: 0 auto;
     width: 30px;
@@ -638,9 +523,31 @@ header .container {
     width: 100%;
     margin-top: 15px;
 }
-=======
 
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
+/*****  M A I N :  L E A R N  *****/
+.learn-cont {
+    margin-top: 14px;
+    margin-bottom: 20px;
+}
+.embed-container { 
+    position: relative; 
+    padding-bottom: 56.25%; 
+    height: 0; 
+    overflow: hidden; 
+    max-width: 100%; 
+    height: auto; 
+} 
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+}
+
+
 
 /*****  M A I N :  F O R M S  *****/
 
@@ -701,13 +608,15 @@ textarea.comments {
 label {
     display: block;
 }
-input[type="checkbox"] {
+.order-form input[type="checkbox"],
+.contact-form input[type="checkbox"] {
     display: inline-block;
     vertical-align: text-top;
     width: 6%;
     margin: 21px 0 0 0;
 }
-input[type="checkbox"]:focus {
+.order-form input[type="checkbox"]:focus,
+.contact-form input[type="checkbox"]:focus {
     outline: none;
     border: none;
     -webkit-box-shadow: none;
@@ -744,8 +653,6 @@ input.submit-button {
 }
 input.submit-button:hover {
     background-color: #39b3ee;
-<<<<<<< HEAD
-=======
 }
 input.submit-button:active {
     background-color: #229dd8;
@@ -753,7 +660,6 @@ input.submit-button:active {
 .disp-none,
 .otherphonetrap {
     display: none;
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 }
 input.submit-button:active {
     background-color: #229dd8;
@@ -782,6 +688,7 @@ input.parsley-error {
 footer {
 	background-color: #2e2c2d;
 	margin-top: 18px;
+    padding-bottom: 14px;
 }
 footer .more-info {
     width: 93%;
@@ -790,7 +697,7 @@ footer .more-info {
 footer .break {
     width: 100%;   
     height: 1px;
-    background-color: #333;
+    background-color: #444;
     margin: 22px 0;
 }
 .row .foot-deets {
@@ -799,6 +706,12 @@ footer .break {
 }
 .foot-deets img {
     width: 100%;
+}
+.row ul.copy-under {
+    display: none;
+}
+.row .foot-org {
+    display: none;
 }
 
 
@@ -814,6 +727,333 @@ footer .break {
 .chosen-container-single {
     font-family: sans-serif;
 }
+
+/*****  M A I N :  L I G H T B O X  *****/
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+}
+#imagelightbox-overlay {
+    background-color: rgba( 255, 255, 255, .9 );
+}
+
+/*****  F R E E W A L L  *****/
+
+.free-wall {
+    width: 100%;
+}
+.brick {
+    width: 300px;
+    height: auto;
+    background-color: white;
+}
+/*@media screen and (min-width: 800px) {
+    .brick{
+        width: 250px;
+    }
+}
+@media screen and (max-width: 799px) {
+    .brick{
+        width: 150px;
+    }
+}*/
+
+.brick img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+/* 780px - 1060px  H E A D E R  
+----------------------------------------------------------------------------- */
+@media screen and (min-width: 780px) and (max-width: 1060px) {
+    .artist-jump {
+        width: 25%;
+    }
+    .logo {
+        clear: none;
+    }
+    .main-nav {
+        float: left;
+        margin-top: 15px;
+        margin-left: -20px;
+        clear: both;
+    }
+}
+
+
+/* 12 Column Grid 780px - 1100px  F O O T E R  
+----------------------------------------------------------------------------- */
+@media screen and (min-width: 780px) and (max-width: 1100px) {
+
+    .row ul.copy-under {
+        display: block;
+        margin-top: 20px;
+    }
+    .row ul.copy-col {
+        display: none;
+    }
+    .span_3,
+    .foot-sm,
+    .foot-lg {
+        width:24.0625%;
+    }
+    .span_12,
+    .copy-under {
+        width:100%;
+        margin-left:0;
+    }
+}
+
+/* H E A D E R  0px - 779px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 779px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .ham-nav {
+        display: block;
+    }
+    .ham-menu ul {
+        max-height: 0;
+        overflow: hidden;
+        margin: 0;
+    }
+    .ham-menu li {
+        visibility: hidden;
+        display: block;
+        padding: 0 0 1em 0;
+        border: none;
+    }
+    .ham-menu .navbar-handle {
+        display: block;
+    }
+    #navbar-checkbox:checked + .ham-menu ul {
+        max-height: 400px;
+    }
+    #navbar-checkbox:checked + .ham-menu li {
+        visibility: visible;
+    }
+    .navbar-checkbox {
+        display: none;
+    }
+    .navbar-handle {
+        display: none;
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+        height: 0;
+    }
+    .ham-menu {
+        float:left;
+        /*position: relative;
+        top: 50px;*/
+        width: 100%;
+        margin: 15px auto -15px auto;
+    }
+    .ham-menu .navbar-handle {
+        position: absolute;
+        top: 88px;
+        left: 3.5%;
+        z-index: 10;
+    }
+}
+
+
+/* 6 Column Grid 500px - 779px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 500px) and (max-width: 779px) {
+    /*footer,
+    header {
+        background-color: gray;
+    }*/
+    .col {
+        margin-left: 2%;
+        padding: 0 3%;
+    }
+    
+    .row .col:first-child {
+        margin-left:0;
+    }
+    
+    /*
+    Add your semantic classnames in alongside their corresponding spans here. e.g.
+    
+    .span_3,
+    .my_semantic_class_name {
+        ...
+    }
+    */
+    
+    .span_1 {
+        width:15.0%;
+    }
+    .span_2,
+    .feat-order,
+    .foot-sm {
+        width:32.0%;
+    }
+    .span_2inside
+    .order-bbar,
+    .feat-ordertext {
+        padding: 0 9.375%; /*IS THIS MATH RIGHT? */ 
+    }
+    .span_3 {
+        width:49.0%;
+    }
+    .span_4,
+    .feat-events,
+    .feat-maintext {
+        width:66.0%;
+        height: 400px;
+    }
+    .span_4inside,
+    .events-bbar,
+    .feat-events ul {
+        padding: 0 4.5455%;
+    }
+    .span_5 {
+        width:83.0%;
+    }
+    .span_6,
+    .header,
+    .footer,
+    .copy-under,
+    .related_content {
+        width:100%;
+        margin-left:0;
+    }
+
+    /* H E A D E R */
+    .artist-jump {
+        float: right;
+        clear: none;
+        width: 40%;
+    }
+    .logo {
+        float: left;
+        clear: none;
+        margin-top: 4px;
+        height: 39px;
+        width: 275px;
+    }
+    /* F O O T E R */
+    .row ul.copy-under {
+        display: block;
+        margin-top: 20px;
+    }
+    .row ul.copy-col {
+        display: none;
+    }
+}
+
+/* 6 Column Grid 500px - 570px F O O T E R
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 500px) and (max-width: 570px) {
+    .span_1,
+    .row .foot-xs {
+        width:15.0%;
+    }
+}
+
+/* H E A D E R  0px - 569px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 569px) {
+    /*footer,
+    header {
+        background-color: gray;
+    }*/
+    .artist-jump {
+        float: left;
+        clear: right;
+        /*float: none;
+        display: block;
+        margin: 0 auto;*/
+        width: 60%;
+    }
+    .logo {
+        float: left;
+        clear: right;
+        margin-top: 12px;
+        /*float: none;
+        display: block;
+        margin: 12px auto 0 auto;*/
+        height: 47px;
+        width: 325px;
+    }
+    .ham-menu .navbar-handle {
+        top: 132px;
+    }
+}
+
+/* 2 Column Grid 0px - 499px 
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 499px) {
+    
+    .row .col:first-child {
+        margin-left:0;
+    }
+    .row {
+        overflow: hidden;
+    }
+    .col {
+        margin-left: 4%;
+        padding:0 3%;
+    }   
+
+    .span_1,
+    .foot-sm,
+    .foot-org {
+        width:48%;
+    }
+    .span_2 {
+        width:100%;
+    }
+    /*.span_2inside,
+    .feat-mainimg,
+    .feat-maintext,
+    .feat-ordertext,
+    .feat-eventstext {
+        padding: 0 4%;
+    }*/
+    /*.span-container,
+    .feature,
+    .feat-order,
+    .feat-events {
+        padding: 0;
+    }*/
+
+    /* F O O T E R */
+    .row ul.copy-under {
+        display: block;
+        margin-top: 14px;
+    }
+    .row ul.copy-col {
+        display: none;
+    }
+    .row .foot-xs {
+        display: none;
+    }
+    .foot-org {
+        margin-top: 14px;
+    }
+}
+
+/*****  M A I N :  C A R D S  *****/
+.bbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 
 
 

@@ -5,6 +5,20 @@
 console.log("that's all folks");
 
 
+// M A I N  N A V
+function currentNav() {
+	var navItem = $( '.main-nav a' )
+	navItem.filter(function(){
+    return this.href == location.href.replace(/#.*/, "");
+	}).addClass("curr-nav");
+
+	var navItem2 = $( '.ham-nav a' )
+	navItem2.filter(function(){
+    return this.href == location.href.replace(/#.*/, "");
+	}).addClass("curr-nav");
+}
+currentNav();
+
 // F R E E W A L L
 
 function initFreewall() {
@@ -46,14 +60,11 @@ function initChosen() {
 		width: "100%",
 		no_results_text: "We couldn't find an artist named"
 	});
-<<<<<<< HEAD
 	$('#artist-jump').on('change', function(evt, params) {
 		if(document.getElementById('artist-jump').value){
 			window.location.href = document.getElementById('artist-jump').value;
 		}
   	});
-=======
->>>>>>> e7f7462b4936d3cd384ef85a7f0f840b470dc639
 	$("#state").chosen({
 		search_contains: true,
 		width: "100%",
@@ -74,22 +85,6 @@ function initChosen() {
 }
 initChosen();
 
-
-// G E N E R A L  F O R M S
-// function submitForm() {
-// 	var submit = $( '.submit-button' );
-// 	if ( submit.length == 0 ) return false;
-
-// 	submit.click(
-// 		function( event ) {
-// 			event.preventDefault();
-
-// 			var form = $( '#email-form' );
-// 			alert('about to submit, yo');
-// 			form.submit();
-// 		}
-// 	);
-// }	
 
 
 
@@ -156,6 +151,17 @@ function submitParsley() {
 submitParsley();
 
 
+// L I G H T B O X
+// function theLightbox () {
+//     $('.gallery a, a[rel="lightbox"]').fluidbox();
+//     console.log("lightbox is here");
+// }
+// theLightbox();
+function imgLightbox() {
+	$( 'a' ).imageLightbox();
+	console.log("image lightbox is here");
+}
+imgLightbox();
 
 
 
